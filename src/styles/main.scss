@@ -1,0 +1,37 @@
+
+:root {
+  /*fonts*/
+  --font-montserratarm-bold: 'MontserratArmBold'; // > 500
+  --font-montserratarm-medium: 'MontserratArmMedium'; // 500
+  --font-montserratarm-regular: 'MontserratArmRegular'; // 400
+  --font-montserratarm-light: 'MontserratArmLight'; // 300
+  --font-montserratarm-extra-light: 'MontserratArmExtraLight'; // 275
+}
+
+// Buttons
+
+.button-primary {
+  font-family: var(--font-montserratarm-medium);
+  height: 44px;
+  display: flex;
+  align-items: center;
+  transition: box-shadow 0.3s ease;
+
+  &:hover {
+    box-shadow: 0 0 12px rgba(216, 163, 163, 0.6);
+  }
+}
+
+.button-secondary {
+  font-family: var(--font-montserratarm-medium);
+  height: 44px;
+  display: flex;
+  align-items: center;
+  transition: box-shadow 0.5s ease, background-color 0.5s ease;
+
+  &:hover {
+    color: var(--white);
+    background-color: var(--color-primary);
+    box-shadow: 0 0 12px rgba(216, 163, 163, 0.6);
+  }
+}

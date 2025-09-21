@@ -1,0 +1,13 @@
+/*media*/
+$desktopXL: 1920;
+$desktopL: 1440;
+$desktopM: 1280;
+$tabletL: 1024;
+$tabletM: 834;
+$mobileL: 440;
+$mobileM: 414;
+$mobileS: 360;
+
+@function responsive-size($size, $device-width: $desktopXL, $min-width: 0) {
+  @return calc(clamp(#{$min-width}px, max($size / #{$device-width} * 100vw, #{$min-width}px), #{$size}px));
+}

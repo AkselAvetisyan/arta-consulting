@@ -1,4 +1,13 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {};
+import createNextIntlPlugin from "next-intl/plugin";
 
-export default nextConfig;
+const nextConfig = {
+    reactStrictMode: false,
+    eslint: {
+        ignoreDuringBuilds: true
+    },
+    poweredByHeader: false, // As SEO warning
+};
+
+const withNextIntl = createNextIntlPlugin('./services/i18n/request.js');
+
+export default withNextIntl(nextConfig);

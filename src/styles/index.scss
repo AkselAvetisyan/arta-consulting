@@ -1,0 +1,69 @@
+@use "src/styles/_variables" as *;
+@use "src/styles/fonts" as fonts;
+
+* {
+  font-family: var(--font-montserratarm-light), sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  margin: 0;
+  user-select: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  font-size: unset;
+  font-weight: unset;
+  user-select: none;
+}
+
+img {
+  user-select: none;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  padding: 0;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+img {
+  pointer-events: none;
+  user-select: none;
+}
+
+a {
+  user-select: none;
+  text-decoration: none;
+  color: unset;
+}
+
+input {
+  color: var(--color-text);
+  outline: none;
+}
+
+textarea {
+  color: var(--color-text);
+  outline: none;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}

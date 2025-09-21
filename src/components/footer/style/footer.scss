@@ -1,0 +1,209 @@
+@use "src/styles/_variables" as *;
+
+.footer {
+  --sides-padding: 100px;
+  --contacts-section-gap: 112px;
+
+  @media (max-width: #{$desktopM}px) {
+    --sides-padding: #{responsive-size($size: 60, $device-width: $desktopL, $min-width: 16)};
+  }
+
+  @media (max-width: #{$tabletL}px) {
+    --contacts-section-gap: 44px
+  }
+}
+
+.footer {
+
+  .title {
+    font-family: var(--font-montserratarm-regular);
+    font-size: var(--font-size-body);
+  }
+
+  .subtitle {
+    font-family: var(--font-montserratarm-extra-light);
+    font-size: var(--font-size-caption);
+    color: var(--color-text);
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+
+    &:hover {
+      color: var(--black);
+      text-shadow: 0 0 0.5px var(--black);
+    }
+  }
+
+}
+
+.footer {
+  width: 100%;
+  background-color: var(--color-surface);
+  border-top: 1px solid var(--color-border);
+
+  .container {
+    width: 100%;
+    max-width: var(--container-width);
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    padding: 60px var(--sides-padding) 82px;
+
+    .contacts-section {
+      display: flex;
+      gap: var(--contacts-section-gap);
+      align-items: flex-start;
+
+      .logo {
+        width: 150px;
+      }
+
+      .contacts {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+
+        .contact-us {
+
+          .section {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+
+            &:nth-of-type(1) {
+              margin-top: 12px;
+              margin-bottom: 6px;
+            }
+          }
+        }
+
+        .follow-us {
+
+          .social-icons {
+            display: flex;
+            gap: 8px;
+            margin-top: 12px;
+
+            .social-icon-link {
+              position: relative;
+              display: inline-block;
+              width: 28px;
+              height: 28px;
+            }
+
+            .icon {
+              position: absolute;
+              top: 0;
+              left: 0;
+              transition: opacity 0.3s ease;
+              width: 100%;
+              height: 100%;
+            }
+
+            .icon.hover {
+              opacity: 0;
+            }
+
+            .social-icon-link:hover .icon.default {
+              opacity: 0;
+            }
+
+            .social-icon-link:hover .icon.hover {
+              opacity: 1;
+            }
+          }
+        }
+      }
+
+    }
+
+    .services {
+
+      .items {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+        margin-top: 12px;
+      }
+    }
+
+    .arrow-button {
+      position: relative;
+      width: 52px;
+      height: 52px;
+      background: none;
+      border: none;
+      padding: 0;
+      cursor: pointer;
+    }
+
+    .arrow-icon {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      transition: opacity 0.3s ease;
+    }
+
+    .arrow-icon.hover {
+      opacity: 0;
+    }
+
+    .arrow-button:hover .arrow-icon.default {
+      opacity: 0;
+    }
+
+    .arrow-button:hover .arrow-icon.hover {
+      opacity: 1;
+    }
+  }
+
+  .copyright {
+    background-color: var(--color-primary);
+    opacity: 0.4;
+    text-align: center;
+    padding: 10px 4px;
+
+    .info {
+      font-family: var(--font-montserratarm-regular);
+      font-size: var(--font-size-label);
+      color: var(--black);
+    }
+  }
+
+}
+
+@media (max-width: #{$tabletL}px) {
+
+  .footer {
+    border-top: 1px solid rgba(var(--color-primary-rgb), 0.4);
+
+    .container {
+      flex-direction: column;
+      align-items: center;
+      gap: 44px;
+      padding: 50px 20px 30px;
+
+      .contacts-section {
+        flex-direction: column;
+        align-items: center;
+
+        .contacts {
+          flex-direction: column-reverse;
+          align-items: center;
+          text-align: center;
+          gap: 30px;
+        }
+
+      }
+
+      .arrow-button {
+        display: none;
+      }
+
+    }
+
+  }
+
+}
