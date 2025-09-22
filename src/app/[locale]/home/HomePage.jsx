@@ -3,6 +3,7 @@
 import Layout from "@/components/custom-components/Layout";
 import Contacts from "@/components/contacts/Contacts";
 import './styles/home.scss';
+import Hero from "@/components/hero/Hero";
 
 function HomePage() {
 
@@ -11,6 +12,7 @@ function HomePage() {
 
                 <Layout>
 
+                    <Hero/>
                     <Contacts/>
 
                 </Layout>

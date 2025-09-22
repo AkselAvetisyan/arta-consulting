@@ -1,0 +1,136 @@
+/* hero.scss */
+
+#hero {
+  position: relative;
+  overflow: hidden;
+  background-color: #070914;
+  padding: 60px 20px;
+
+  .gradient-bg {
+    pointer-events: none;
+    position: absolute;
+    inset: 0;
+    opacity: 0.3;
+    /* Apply your GRADIENT_BG styles here, e.g.: */
+    background: linear-gradient(90deg, #ff7a18, #af002d 70%);
+  }
+
+  .container {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    gap: 2.5rem;
+
+    @media (min-width: 1024px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hero-content {
+      .badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        border-radius: 9999px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        background-color: rgba(255, 255, 255, 0.05);
+        padding: 0.25rem 0.75rem;
+        font-size: 0.75rem;
+        color: rgba(255, 255, 255, 0.8);
+        margin-bottom: 1rem;
+      }
+
+      h1 {
+        font-size: 2.25rem;
+        font-weight: 800;
+        line-height: 1.2;
+        letter-spacing: -0.025em;
+        color: #fff;
+
+        @media (min-width: 640px) {
+          font-size: 3rem;
+        }
+      }
+
+      p {
+        margin-top: 1rem;
+        max-width: 36rem;
+        font-size: 1.125rem;
+        color: #cbd5e1;
+      }
+
+      .hero-buttons {
+        margin-top: 2rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+
+        @media (min-width: 640px) {
+          flex-direction: row;
+        }
+
+        a {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: 0.5rem;
+          padding: 0.75rem 1.25rem;
+          font-size: 0.875rem;
+          font-weight: 600;
+          text-decoration: none;
+
+          &.primary {
+            color: #fff;
+            background: linear-gradient(90deg, #ff7a18, #af002d 70%);
+          }
+
+          &.secondary {
+            color: #fff;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+
+            &:hover {
+              background-color: rgba(255, 255, 255, 0.05);
+            }
+          }
+
+          svg {
+            margin-left: 0.5rem;
+            width: 1rem;
+            height: 1rem;
+          }
+        }
+      }
+    }
+
+    .hero-features {
+      position: relative;
+
+      .feature-card {
+        border-radius: 1.5rem;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        background-color: #0b0d18;
+        padding: 1.5rem;
+        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+
+        .features-grid {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 1rem;
+
+          .feature {
+            h3 {
+              font-weight: 700;
+              color: #fff;
+              margin-bottom: 0.25rem;
+            }
+
+            p {
+              font-size: 0.875rem;
+              color: #cbd5e1;
+            }
+          }
+        }
+      }
+    }
+  }
+}
