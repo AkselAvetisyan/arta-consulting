@@ -8,47 +8,41 @@ import {BASE_IMAGES} from "@/main/constants/BASE_IMAGES";
 import '../styles/header-desktop.scss';
 
 function HeaderDesktop({ isVisible }) {
-
     const t = useTranslations();
-    const pathname = usePathname();
-    const path = pathname === getRouterPrefix() + BASE_ROUTERS.main ? "Home Screen" : pathname
 
     return (
-        <>
-            <header className={`header-desktop ${isVisible ? 'header-visible' : 'header-hidden'}`}>
-
-                <div className={"container"}>
-
-                    <Link href={getRouterPrefix() + BASE_ROUTERS.main}>
-                        <img className={"logo"} src={BASE_IMAGES.icons.logo} alt="Hyoor logo"/>
-                    </Link>
-
-                    <div className={"services"}>
-                        <Link href={getRouterPrefix() + BASE_ROUTERS.aboutUs}
-                              className={"service"}>
-                            {t("menu-aboutUs")}
-                        </Link>
-
-                        <Link href={getRouterPrefix() + BASE_ROUTERS.services}
-                              className={"service"}>
-                            {t("menu-services")}
-                        </Link>
-
-                        <Link href={getRouterPrefix() + BASE_ROUTERS.invitations}
-                              className={"service"}>
-                            {t("menu-invitations")}
-                        </Link>
-
-                        <Link href={getRouterPrefix() + BASE_ROUTERS.contactUs}
-                              className={"service contact-us"}>
-                            {t("menu-contactUs")}
-                        </Link>
+        <header className={`header-desktop ${isVisible ? "header-visible" : "header-hidden"}`}>
+            <div className="header-container">
+                {/* Logo */}
+                <Link href={getRouterPrefix() + BASE_ROUTERS.main} className="logo-wrapper">
+                    <div className="logo-box">
+                        <span className="logo-text">ARTA</span>
                     </div>
+                    <span className="logo-sub">CONSULTING</span>
+                </Link>
 
-                </div>
+                {/* Navigation */}
+                <nav className="nav">
+                    <Link href={getRouterPrefix() + BASE_ROUTERS.services} className="nav-link">
+                        {t("menu-services")}
+                    </Link>
+                    <Link href={getRouterPrefix() + BASE_ROUTERS.aboutUs} className="nav-link">
+                        {t("menu-aboutUs")}
+                    </Link>
+                    <Link href={getRouterPrefix() + BASE_ROUTERS.invitations} className="nav-link">
+                        {t("menu-invitations")}
+                    </Link>
+                    <Link href={getRouterPrefix() + BASE_ROUTERS.contactUs} className="nav-link">
+                        {t("menu-contactUs")}
+                    </Link>
+                </nav>
 
-            </header>
-        </>
+                {/* CTA */}
+                <Link href={getRouterPrefix() + BASE_ROUTERS.contactUs} className="cta">
+                    {t("menu-contactUs")}
+                </Link>
+            </div>
+        </header>
     );
 }
 
