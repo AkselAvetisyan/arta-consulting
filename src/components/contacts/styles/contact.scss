@@ -1,0 +1,193 @@
+@use "src/styles/_variables" as *;
+
+.contact {
+  position: relative;
+  background-color: #0A0C15;
+  padding: 80px 0;
+
+  .gradient-bar {
+    position: absolute;
+    inset-inline: 0;
+    top: -40px;
+    margin-inline: auto;
+    width: 224px;
+    height: 4px;
+    border-radius: 9999px;
+    background: var(--gradient-bg);
+  }
+
+  .content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 32px;
+
+    @media (min-width: 768px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .form {
+      background-color: #0B0D18;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 16px;
+      padding: 24px;
+
+      .field-group {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 16px;
+
+        @media (min-width: 640px) {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .field {
+          label {
+            font-size: 14px;
+            color: #cbd5e1;
+          }
+
+          input {
+            margin-top: 4px;
+            width: 100%;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background-color: rgba(255, 255, 255, 0.05);
+            padding: 8px 12px;
+            color: #fff;
+            font-size: 14px;
+
+            &::placeholder {
+              color: #94a3b8;
+            }
+
+            &:focus {
+              outline: none;
+              border-color: var(--white);
+              box-shadow: 0 0 0 2px var(--white);
+            }
+          }
+        }
+      }
+
+      .message {
+        margin-top: 16px;
+
+        label {
+          font-size: 14px;
+          color: #cbd5e1;
+        }
+
+        textarea {
+          margin-top: 4px;
+          width: 100%;
+          border-radius: 8px;
+          border: 1px solid rgba(255, 255, 255, 0.1);
+          background-color: rgba(255, 255, 255, 0.05);
+          padding: 8px 12px;
+          color: #fff;
+          font-size: 14px;
+          resize: vertical;
+
+          &::placeholder {
+            color: #94a3b8;
+          }
+
+          &:focus {
+            outline: none;
+            border-color: var(--white);
+            box-shadow: 0 0 0 2px var(--white);
+          }
+        }
+      }
+
+      .submit {
+        margin-top: 20px;
+        width: 100%;
+        padding: 12px 20px;
+        border-radius: 8px;
+        font-size: 14px;
+        font-weight: 600;
+        color: var(--white);
+        background: var(--gradient-bg);
+        cursor: pointer;
+        border: none;
+
+        &:hover {
+          opacity: 0.9;
+        }
+      }
+
+      .disclaimer {
+        margin-top: 12px;
+        text-align: center;
+        font-size: 12px;
+        color: #94a3b8;
+      }
+    }
+
+    .info {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+
+      .card {
+        background-color: #0B0D18;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 16px;
+        padding: 24px;
+
+        h4 {
+          margin-bottom: 12px;
+          font-size: 18px;
+          font-weight: 600;
+          color: #fff;
+        }
+
+        .contact-list {
+          display: flex;
+          flex-direction: column;
+          gap: 12px;
+          color: #cbd5e1;
+
+          p {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+          }
+        }
+
+        .calendly-btn {
+          margin-top: 20px;
+          display: inline-flex;
+          align-items: center;
+          padding: 8px 16px;
+          border-radius: 8px;
+          font-size: 14px;
+          font-weight: 600;
+          color: var(--white);
+          background: var(--gradient-bg);
+          text-decoration: none;
+
+          &:hover {
+            opacity: 0.9;
+          }
+        }
+
+        ul {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+          display: flex;
+          flex-direction: column;
+          gap: 8px;
+
+          li {
+            font-size: 14px;
+            color: #cbd5e1;
+          }
+        }
+      }
+    }
+  }
+}

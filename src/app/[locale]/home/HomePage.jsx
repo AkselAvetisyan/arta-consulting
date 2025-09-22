@@ -1,4 +1,7 @@
+'use client'
+
 import Layout from "@/components/custom-components/Layout";
+import Contacts from "@/components/contacts/Contacts";
 import './styles/home.scss';
 
 function HomePage() {
@@ -8,9 +11,7 @@ function HomePage() {
 
                 <Layout>
 
-                    <section style={{minHeight: "100vh"}}>
-
-                    </section>
+                    <Contacts/>
 
                 </Layout>
 
