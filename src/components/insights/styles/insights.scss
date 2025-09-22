@@ -1,0 +1,73 @@
+// src/styles/insights.scss
+@use "src/styles/_variables" as *;
+
+#insights {
+  background: #0A0C15;
+  padding: 80px 20px;
+
+  .insights-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .section-title {
+    text-align: center;
+    margin-bottom: 50px;
+
+    .eyebrow {
+      display: inline-block;
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 600;
+      background: var(--gradient-bg);
+      color: white;
+    }
+
+    .title {
+      font-size: 28px;
+      font-weight: 800;
+      margin-top: 10px;
+      color: white;
+    }
+
+    .subtitle {
+      max-width: 700px;
+      margin: 12px auto 0;
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 16px;
+    }
+  }
+
+  .insights-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+  }
+
+  .insight-card {
+    background: #0b0d18;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 24px;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+
+    &:hover {
+      transform: translateY(-4px);
+      border-color: rgba(255, 255, 255, 0.3);
+    }
+
+    .card-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: white;
+      margin-bottom: 10px;
+    }
+
+    .card-text {
+      font-size: 15px;
+      line-height: 1.6;
+      color: rgba(255, 255, 255, 0.75);
+    }
+  }
+}

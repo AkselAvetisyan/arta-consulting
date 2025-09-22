@@ -20,7 +20,6 @@ function Layout({ children }) {
 
               main {
                 flex: 1;
-                margin-top: var(--header-height);
               }
             `}</style>
         </>
