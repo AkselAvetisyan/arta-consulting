@@ -1,4 +1,3 @@
-// src/components/Workshops.jsx
 import React from "react";
 import "./styles/workshops.scss";
 

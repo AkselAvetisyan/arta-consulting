@@ -1,8 +1,8 @@
 @use "src/styles/_variables" as *;
 
-.contact {
+#contact {
   position: relative;
-  background-color: #0A0C15;
+  background-color: var(--color-surface);
   padding: 80px 0;
 
   .gradient-bar {
@@ -13,17 +13,13 @@
     width: 224px;
     height: 4px;
     border-radius: 9999px;
-    background: var(--gradient-bg);
+    background: var(--color-gradient);
   }
 
   .content {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
     gap: 32px;
-
-    @media (min-width: 768px) {
-      grid-template-columns: repeat(2, 1fr);
-    }
 
     .form {
       background-color: #0B0D18;
@@ -33,28 +29,24 @@
 
       .field-group {
         display: grid;
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
         gap: 16px;
-
-        @media (min-width: 640px) {
-          grid-template-columns: repeat(2, 1fr);
-        }
 
         .field {
           label {
-            font-size: 14px;
+            font-size: var(--font-size-caption);
             color: #cbd5e1;
           }
 
           input {
-            margin-top: 4px;
             width: 100%;
+            font-size: var(--font-size-caption);
+            color: var(--color-white);
+            background-color: rgba(255, 255, 255, 0.05);
             border-radius: 8px;
             border: 1px solid rgba(255, 255, 255, 0.1);
-            background-color: rgba(255, 255, 255, 0.05);
             padding: 8px 12px;
-            color: #fff;
-            font-size: 14px;
+            margin-top: 4px;
 
             &::placeholder {
               color: #94a3b8;
@@ -70,10 +62,10 @@
       }
 
       .message {
-        margin-top: 16px;
+        font-size: var(--font-size-body);
 
         label {
-          font-size: 14px;
+          font-size: var(--font-size-caption);
           color: #cbd5e1;
         }
 
@@ -101,16 +93,16 @@
       }
 
       .submit {
-        margin-top: 20px;
         width: 100%;
-        padding: 12px 20px;
-        border-radius: 8px;
-        font-size: 14px;
-        font-weight: 600;
+        font-size: var(--font-size-caption);
         color: var(--white);
-        background: var(--gradient-bg);
+        background: var(--color-gradient);
+        border-radius: 8px;
+        font-weight: 600;
         cursor: pointer;
         border: none;
+        margin-top: 20px;
+        padding: 12px 20px;
 
         &:hover {
           opacity: 0.9;
@@ -118,10 +110,10 @@
       }
 
       .disclaimer {
-        margin-top: 12px;
         text-align: center;
-        font-size: 12px;
+        font-size: var(--font-size-label);
         color: #94a3b8;
+        margin-top: 12px;
       }
     }
 
@@ -137,10 +129,10 @@
         padding: 24px;
 
         h4 {
-          margin-bottom: 12px;
-          font-size: 18px;
+          font-size: var(--font-size-subtitle);
           font-weight: 600;
-          color: #fff;
+          color: var(--color-white);
+          margin-bottom: 12px;
         }
 
         .contact-list {
@@ -150,24 +142,24 @@
           color: #cbd5e1;
 
           p {
+            font-size: var(--font-size-caption);
             display: flex;
             align-items: center;
             gap: 12px;
-            font-size: 14px;
           }
         }
 
         .calendly-btn {
-          margin-top: 20px;
+          font-size: var(--font-size-caption);
+          font-weight: 600;
+          color: var(--white);
           display: inline-flex;
           align-items: center;
           padding: 8px 16px;
           border-radius: 8px;
-          font-size: 14px;
-          font-weight: 600;
-          color: var(--white);
-          background: var(--gradient-bg);
+          background: var(--color-gradient);
           text-decoration: none;
+          margin-top: 20px;
 
           &:hover {
             opacity: 0.9;
@@ -183,10 +175,23 @@
           gap: 8px;
 
           li {
-            font-size: 14px;
+            font-size: var(--font-size-caption);
             color: #cbd5e1;
           }
         }
+      }
+    }
+  }
+}
+
+@media(max-width: #{$tabletM}px) {
+  #contact {
+
+    .content {
+      grid-template-columns: 1fr;
+
+      .form .field-group {
+        grid-template-columns: 1fr;
       }
     }
   }

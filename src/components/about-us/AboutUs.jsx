@@ -1,4 +1,3 @@
-// src/components/About.jsx
 import React from "react";
 import "./styles/about-us.scss";
 
@@ -25,13 +24,6 @@ function AboutUs() {
                             From market entry planning to turnaround programs, we translate complex business
                             challenges into actionable solutions, always with your KPIs at the core.
                         </p>
-                    </div>
-                    <div className="about-image">
-                        <img
-                            src="/images/about-team.jpg"
-                            alt="About our team"
-                            loading="lazy"
-                        />
                     </div>
                 </div>
             </div>

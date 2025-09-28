@@ -3,7 +3,7 @@ import "./styles/contact.scss";
 
 function Contacts() {
     return (
-        <section id="contact" className="contact">
+        <section id="contact">
             <div className="gradient-bar" />
 
             <section>

@@ -1,4 +1,3 @@
-// src/components/Services.jsx
 import React from "react";
 import { Briefcase, Presentation, FileBarChart2, Activity } from "lucide-react";
 import "./styles/services.scss";
@@ -12,7 +11,7 @@ const SERVICES = [
 
 function Services() {
     return (
-        <section id="services" className="services">
+        <section id="services">
             <div className="services-container">
                 <div className="section-title">
                     <span className="eyebrow">What we do</span>

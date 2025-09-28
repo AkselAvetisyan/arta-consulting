@@ -2,11 +2,11 @@
 @use "src/styles/_variables" as *;
 
 #workshops {
-  background: #070914;
+  background: var(--color-surface);
   padding: 80px 20px;
 
   .workshops-container {
-    max-width: 1200px;
+    max-width: var(--container-width);
     margin: 0 auto;
   }
 
@@ -15,27 +15,26 @@
     margin-bottom: 50px;
 
     .eyebrow {
-      display: inline-block;
-      padding: 6px 14px;
-      border-radius: 999px;
-      font-size: 12px;
+      font-size: var(--font-size-label);
+      color: var(--color-white);
       font-weight: 600;
-      background: var(--gradient-bg);
-      color: white;
+      background: var(--color-gradient);
+      border-radius: 20px;
+      padding: 6px 14px;
     }
 
     .title {
-      font-size: 28px;
+      font-size: var(--font-size-title);
+      color: var(--color-white);
       font-weight: 800;
-      margin-top: 10px;
-      color: white;
+      margin-top: 20px;
     }
 
     .subtitle {
       max-width: 700px;
-      margin: 12px auto 0;
+      font-size: var(--font-size-body);
       color: rgba(255, 255, 255, 0.7);
-      font-size: 16px;
+      margin: 12px auto 0;
     }
   }
 
