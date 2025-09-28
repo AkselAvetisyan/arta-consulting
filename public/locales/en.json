@@ -1,3 +1,9 @@
 {
-  "success": "հաջողություն"
+
+  "menu-services": "Services",
+  "menu-aboutUs": "About Us",
+  "menu-workshops": "Workshops",
+  "menu-insights": "Insights",
+  "menu-contactUs": "Contact Us"
+
 }

@@ -1,8 +1,8 @@
 export const BASE_IMAGES = {
     icons: {
-        logo: '/assets/icons/logo/logo.png',
+        logo: '/assets/icons/logo/logo_icon.png',
         burger: '/assets/icons/burger-icon.svg',
-        close: '/assets/icons/x-icon.svg',
+        close: '/assets/icons/x-icon.png',
         noResultsIcon: '/assets/icons/no-results-icon.svg',
         infoCircle: '/assets/invitations/main-icons/info_circle_icon.svg',
         playIcon: '/assets/invitations/main-icons/play_icon.svg',

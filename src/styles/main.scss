@@ -1,3 +1,4 @@
+@use 'src/styles/_variables' as var;
 
 :root {
   /*fonts*/
@@ -7,8 +8,41 @@
   --font-montserratarm-light: 'MontserratArmLight'; // 300
   --font-montserratarm-extra-light: 'MontserratArmExtraLight'; // 275
 
+  /*colors*/
+  --color-background: #040314;
+  --color-white: #FFFFFF;
+  --color-gradient: linear-gradient(90deg, #040314 0%, #4F4399 50%, #3230B6 100%);
+
+  /*font sizes*/
+  --font-size-hero: 104px;
+  --font-size-display: 60px;
+  --font-size-headline: 50px;
+  --font-size-headline-sm: 40px;
+  --font-size-title: 24px;
+  --font-size-subtitle: 20px;
+  --font-size-body: 16px;
+  --font-size-body-sm: 15px;
+  --font-size-caption: 14px;
+  --font-size-label: 13px;
+
   /*Main Variables*/
   --header-height: 115px;
+
+  @media (max-width: #{var.$tabletL}px) {
+    --font-size-hero: #{var.responsive-size($size: 104, $device-width: var.$tabletL, $min-width: 36)};
+    --font-size-display: #{var.responsive-size($size: 60, $device-width: var.$tabletL, $min-width: 26)};
+    --font-size-headline: #{var.responsive-size($size: 50, $device-width: var.$tabletL, $min-width: 26)};
+    --font-size-headline-sm: #{var.responsive-size($size: 40, $device-width: var.$tabletL, $min-width: 26)};
+    --font-size-title: #{var.responsive-size($size: 24, $device-width: var.$tabletL, $min-width: 22)};
+
+    --header-height: 95px;
+  }
+
+  @media (max-width: #{var.$mobileL}px) {
+    --font-size-title: 16px;
+    --font-size-body: 14px;
+    --font-size-label: 12px;
+  }
 }
 
 // Buttons

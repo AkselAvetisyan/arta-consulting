@@ -22,77 +22,62 @@
     align-items: center;
     justify-content: space-between;
     height: var(--header-height, 64px);
+    background: var(--color-background);
     padding: 0 20px;
-    background: rgba(10, 12, 21, 0.8);
 
-    .logo-wrapper {
+    .logo-container {
       display: flex;
       align-items: center;
       gap: 0.75rem;
-      text-decoration: none;
 
-      .logo-box {
+      .logo-icon {
+        width: 60px;
+        height: 40px;
         display: flex;
         align-items: center;
         justify-content: center;
-        padding: 0.5rem;
-        border-radius: 0.5rem;
-        background: linear-gradient(90deg, #4f46e5, #9333ea, #ec4899);
-
-        .logo-text {
-          font-size: 1.125rem;
-          font-weight: 800;
-          letter-spacing: 0.1em;
-          color: white;
-        }
+        background: var(--color-gradient);
+        border-radius: 6px;
       }
 
-      .logo-sub {
-        font-size: 0.875rem;
-        font-weight: 600;
-        letter-spacing: 0.1em;
-        color: rgba(255, 255, 255, 0.8);
-
-        @media (max-width: 640px) {
-          display: none;
-        }
+      .logo-text {
+        font-family: var(--font-montserratarm-regular);
+        font-size: var(--font-size-caption);
+        color: var(--color-white);
+        letter-spacing: 2px;
       }
     }
 
-    .nav {
+    .content {
       display: flex;
-      gap: 1.5rem;
+      gap: 60px;
 
-      .nav-link {
-        font-size: 0.95rem;
-        font-weight: 500;
-        color: rgba(255, 255, 255, 0.8);
-        text-decoration: none;
+      .menu-item {
+        font-size: var(--font-size-body);
+        color: var(--color-white);
         transition: color 0.3s ease;
 
         &:hover {
-          color: white;
+          color: gray;
         }
       }
+    }
 
-      @media (max-width: 768px) {
-        display: none;
+    .button {
+      font-family: var(--font-montserratarm-regular);
+      font-size: var(--font-size-body-sm);
+      color: var(--color-white);
+      background: var(--color-gradient);
+      border-radius: 8px;
+      transition: box-shadow 0.3s ease, transform 0.2s ease;
+      margin-left: 16px;
+      padding: 8px 16px;
+
+      &:hover {
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+        transform: scale(1.05);
       }
     }
 
-    .cta {
-      margin-left: 1rem;
-      padding: 0.5rem 1rem;
-      border-radius: 0.5rem;
-      font-size: 0.875rem;
-      font-weight: 600;
-      color: white;
-      text-decoration: none;
-      background: linear-gradient(90deg, #4f46e5, #9333ea, #ec4899);
-
-      @media (max-width: 768px) {
-        display: none;
-      }
-    }
   }
 }
