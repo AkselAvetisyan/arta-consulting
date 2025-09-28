@@ -20,6 +20,7 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 32px;
+    margin: 0 16px;
 
     .form {
       background-color: #0B0D18;

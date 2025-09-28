@@ -45,6 +45,7 @@
         max-width: 560px;
         font-size: var(--font-size-body);
         color: var(--color-white);
+        line-height: 24px;
       }
 
       .hero-buttons {
@@ -144,6 +145,10 @@
           grid-template-columns: repeat(1, 1fr);
           row-gap: 24px;
         }
+      }
+
+      .hero-content p {
+        line-height: 20px;
       }
     }
   }
