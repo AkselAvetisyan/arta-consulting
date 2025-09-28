@@ -2,7 +2,7 @@ import React from "react";
 import {motion} from "framer-motion";
 import SidebarMenu from "./SidebarMenu";
 
-function Sidebar({ sidebar }) {
+function Sidebar({ sidebar, hideSidebar = () => {} }) {
 
     return (
         <>
@@ -13,7 +13,7 @@ function Sidebar({ sidebar }) {
                             transition={{duration: 0.4, ease: 'easeInOut'}}>
 
                     <div className={"menu"}>
-                        <SidebarMenu/>
+                        <SidebarMenu hideSidebar={hideSidebar}/>
                     </div>
 
                 </motion.div>

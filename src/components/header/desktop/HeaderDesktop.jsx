@@ -13,8 +13,6 @@ function HeaderDesktop({ isVisible }) {
     function scrollToSection(id) {
         const section = document.getElementById(id);
         section.scrollIntoView({behavior: "smooth"});
-
-        console.log(id)
     }
 
     return (
