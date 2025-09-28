@@ -1,91 +1,74 @@
-/* hero.scss */
+@use 'src/styles/_variables' as *;
 
 #hero {
   position: relative;
   overflow: hidden;
   background-color: #070914;
-  padding: 60px 20px;
+  padding: calc(var(--header-height) + 40px) 20px;
 
   .gradient-bg {
     pointer-events: none;
     position: absolute;
     inset: 0;
     opacity: 0.3;
-    /* Apply your GRADIENT_BG styles here, e.g.: */
-    background: linear-gradient(90deg, #ff7a18, #af002d 70%);
+    background: var(--color-gradient)
   }
 
   .container {
     position: relative;
     display: grid;
-    grid-template-columns: 1fr;
     align-items: center;
-    gap: 2.5rem;
-
-    @media (min-width: 1024px) {
-      grid-template-columns: repeat(2, 1fr);
-    }
+    gap: 60px;
+    grid-template-columns: repeat(2, 1fr);
 
     .hero-content {
       .badge {
         display: inline-flex;
         align-items: center;
-        gap: 0.5rem;
-        border-radius: 9999px;
+        border-radius: 20px;
         border: 1px solid rgba(255, 255, 255, 0.2);
         background-color: rgba(255, 255, 255, 0.05);
-        padding: 0.25rem 0.75rem;
-        font-size: 0.75rem;
+        font-size: var(--font-size-label);
         color: rgba(255, 255, 255, 0.8);
-        margin-bottom: 1rem;
+        padding: 4px 12px;
+        margin-bottom: 16px;
       }
 
       h1 {
-        font-size: 2.25rem;
+        font-size: var(--font-size-headline-sm);
         font-weight: 800;
-        line-height: 1.2;
-        letter-spacing: -0.025em;
-        color: #fff;
-
-        @media (min-width: 640px) {
-          font-size: 3rem;
-        }
+        color: var(--color-white);
       }
 
       p {
-        margin-top: 1rem;
-        max-width: 36rem;
-        font-size: 1.125rem;
-        color: #cbd5e1;
+        margin-top: 16px;
+        max-width: 560px;
+        font-size: var(--font-size-body);
+        color: var(--color-white);
       }
 
       .hero-buttons {
         margin-top: 2rem;
         display: flex;
         flex-direction: column;
-        gap: 0.75rem;
-
-        @media (min-width: 640px) {
-          flex-direction: row;
-        }
+        gap: 16px;
 
         a {
           display: inline-flex;
           align-items: center;
           justify-content: center;
-          border-radius: 0.5rem;
-          padding: 0.75rem 1.25rem;
-          font-size: 0.875rem;
-          font-weight: 600;
+          border-radius: 8px;
+          padding: 12px 20px;
+          font-size: var(--font-size-caption);
           text-decoration: none;
 
           &.primary {
-            color: #fff;
-            background: linear-gradient(90deg, #ff7a18, #af002d 70%);
+            color: var(--color-white);
+            background: var(--color-gradient)
           }
 
           &.secondary {
-            color: #fff;
+            color: var(--color-white);
             border: 1px solid rgba(255, 255, 255, 0.2);
 
             &:hover {
@@ -94,9 +77,9 @@
           }
 
           svg {
-            margin-left: 0.5rem;
-            width: 1rem;
-            height: 1rem;
+            margin-left: 8px;
+            width: 16px;
+            height: 16px;
           }
         }
       }
@@ -106,29 +89,60 @@
       position: relative;
 
       .feature-card {
-        border-radius: 1.5rem;
+        border-radius: 24px;
         border: 1px solid rgba(255, 255, 255, 0.1);
-        background-color: #0b0d18;
-        padding: 1.5rem;
+        background-color: var(--color-surface);
         box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+        padding: 24px;
 
         .features-grid {
           display: grid;
           grid-template-columns: repeat(2, 1fr);
-          gap: 1rem;
+          gap: 60px;
 
           .feature {
             h3 {
-              font-weight: 700;
-              color: #fff;
-              margin-bottom: 0.25rem;
+              color: var(--color-white);
+              margin-bottom: 8px;
             }
 
             p {
-              font-size: 0.875rem;
+              font-size: var(--font-size-caption);
+              line-height: 24px;
               color: #cbd5e1;
             }
           }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: #{$tabletL}px) {
+  #hero {
+
+    .container {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+@media (max-width: #{$tabletM}px) {
+  #hero {
+
+    .container {
+      gap: 40px;
+
+      .hero-content .hero-buttons {
+        flex-direction: column;
+      }
+
+      .hero-features .feature-card {
+        padding: 20px;
+
+        .features-grid {
+          grid-template-columns: repeat(1, 1fr);
+          row-gap: 24px;
         }
       }
     }
