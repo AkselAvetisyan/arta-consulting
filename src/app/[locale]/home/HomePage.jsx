@@ -7,8 +7,9 @@ import Services from "@/components/services/Services";
 import AboutUs from "@/components/about-us/AboutUs";
 import Workshops from "@/components/workshops/Workshops";
 import Insights from "@/components/insights/Insights";
-import './styles/home.scss';
 import MotionSection from "@/components/custom-components/motion-section/MotionSection";
+import {SECTIONS} from "@/main/constants/BASE_SECTIONS";
+import './styles/home.scss';
 
 function HomePage() {
 
@@ -16,12 +17,12 @@ function HomePage() {
         <MotionSection transition={1} key={"home"} className="home">
             <Layout>
 
-                <Hero/>
-                <Services/>
-                <AboutUs/>
-                <Workshops/>
-                <Insights/>
-                <Contacts/>
+                <Hero id={SECTIONS.hero}/>
+                <Services id={SECTIONS.services}/>
+                <AboutUs id={SECTIONS.aboutUs}/>
+                <Workshops id={SECTIONS.workshops}/>
+                <Insights id={SECTIONS.insights}/>
+                <Contacts id={SECTIONS.contacts}/>
 
             </Layout>
         </MotionSection>

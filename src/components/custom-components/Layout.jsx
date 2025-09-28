@@ -16,6 +16,7 @@ function Layout({ children }) {
                 display: flex;
                 flex-direction: column;
                 min-height: 100vh;
+                background-color: var(--color-surface);
               }
 
               main {

@@ -1,6 +1,6 @@
 @use "src/styles/_variables" as *;
 
-#contact {
+#contact-us {
   position: relative;
   background-color: var(--color-surface);
   padding: 80px 0;
@@ -31,6 +31,7 @@
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 16px;
+        margin-bottom: 20px;
 
         .field {
           label {

@@ -1,10 +1,10 @@
-// src/components/Insights.jsx
 import React from "react";
 import "./styles/insights.scss";
 
-function Insights() {
+function Insights({ id }) {
+
     return (
-        <section id="insights">
+        <section id={id}>
             <div className="insights-container">
                 <div className="section-title">
                     <span className="eyebrow">Insights</span>

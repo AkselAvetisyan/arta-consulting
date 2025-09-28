@@ -1,9 +1,10 @@
 import React from "react";
 import "./styles/about-us.scss";
 
-function AboutUs() {
+function AboutUs({ id }) {
+
     return (
-        <section id="about-us">
+        <section id={id}>
             <div className="about-container">
                 <div className="section-title">
                     <span className="eyebrow">About us</span>

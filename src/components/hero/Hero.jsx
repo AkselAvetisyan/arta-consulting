@@ -1,17 +1,10 @@
+import Feature from "@/components/hero/components/Feature";
 import './styles/hero.scss';
 
-function Feature({ title, text }) {
-    return (
-        <div className="feature">
-            <h3>{title}</h3>
-            <p>{text}</p>
-        </div>
-    );
-}
+function Hero({ id }) {
 
-function Hero() {
     return (
-        <section id="hero">
+        <section id={id}>
             <div className="gradient-bg" />
             <div className="container">
                 <div className="hero-content">

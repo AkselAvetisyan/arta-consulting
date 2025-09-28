@@ -1,14 +1,21 @@
 import React from 'react';
 import { getRouterPrefix } from "../../router/getRouterPrefix";
-import {usePathname} from "next/navigation";
 import {useTranslations} from "next-intl";
 import {BASE_ROUTERS} from "@/main/constants/BASE_ROUTERS";
 import Link from "next/link";
-import {BASE_IMAGES} from "@/main/constants/BASE_IMAGES";
+import {SECTIONS} from "@/main/constants/BASE_SECTIONS";
 import '../styles/header-desktop.scss';
 
 function HeaderDesktop({ isVisible }) {
+
     const t = useTranslations();
+
+    function scrollToSection(id) {
+        const section = document.getElementById(id);
+        section.scrollIntoView({behavior: "smooth"});
+
+        console.log(id)
+    }
 
     return (
         <header className={`header-desktop ${isVisible ? "header-visible" : "header-hidden"}`}>
@@ -21,24 +28,23 @@ function HeaderDesktop({ isVisible }) {
                 </Link>
 
                 <nav className="content">
-                    <Link href={getRouterPrefix() + BASE_ROUTERS.services} className="menu-item">
+                    <button className="menu-item" onClick={() => { scrollToSection(SECTIONS.services) }}>
                         {t("menu-services")}
-                    </Link>
-                    <Link href={getRouterPrefix() + BASE_ROUTERS.aboutUs} className="menu-item">
+                    </button>
+                    <button className="menu-item" onClick={() => { scrollToSection(SECTIONS.aboutUs) }}>
                         {t("menu-aboutUs")}
-                    </Link>
-                    <Link href={getRouterPrefix() + BASE_ROUTERS.invitations} className="menu-item">
+                    </button>
+                    <button className="menu-item" onClick={() => { scrollToSection(SECTIONS.workshops) }}>
                         {t("menu-workshops")}
-                    </Link>
-                    <Link href={getRouterPrefix() + BASE_ROUTERS.contactUs} className="menu-item">
+                    </button>
+                    <button className="menu-item" onClick={() => { scrollToSection(SECTIONS.insights) }}>
                         {t("menu-insights")}
-                    </Link>
+                    </button>
                 </nav>
 
-                {/* CTA */}
-                <Link href={getRouterPrefix() + BASE_ROUTERS.contactUs} className="button">
+                <button className="button" onClick={() => { scrollToSection(SECTIONS.contacts) }}>
                     {t("menu-contactUs")}
-                </Link>
+                </button>
             </div>
         </header>
     );

@@ -1,10 +1,10 @@
 import React from "react";
 import "./styles/workshops.scss";
 
-function Workshops() {
+function Workshops({ id }) {
 
     return (
-        <section id="workshops">
+        <section id={id}>
             <div className="workshops-container">
                 <div className="section-title">
                     <span className="eyebrow">Workshops</span>
