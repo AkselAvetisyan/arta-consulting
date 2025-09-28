@@ -16,11 +16,11 @@ function Layout({ children }) {
                 display: flex;
                 flex-direction: column;
                 min-height: 100vh;
+                background-color: var(--color-surface);
               }
 
               main {
                 flex: 1;
-                margin-top: var(--header-height);
               }
             `}</style>
         </>

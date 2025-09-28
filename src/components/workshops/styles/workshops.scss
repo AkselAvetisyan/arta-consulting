@@ -1,0 +1,72 @@
+// src/styles/workshops.scss
+@use "src/styles/_variables" as *;
+
+#workshops {
+  background: var(--color-surface);
+  padding: 80px 20px;
+
+  .workshops-container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+  }
+
+  .section-title {
+    text-align: center;
+    margin-bottom: 50px;
+
+    .eyebrow {
+      font-size: var(--font-size-label);
+      color: var(--color-white);
+      font-weight: 600;
+      background: var(--color-gradient);
+      border-radius: 20px;
+      padding: 6px 14px;
+    }
+
+    .title {
+      font-size: var(--font-size-title);
+      color: var(--color-white);
+      font-weight: 800;
+      margin-top: 20px;
+    }
+
+    .subtitle {
+      max-width: 700px;
+      font-size: var(--font-size-body);
+      color: rgba(255, 255, 255, 0.7);
+      margin: 12px auto 0;
+    }
+  }
+
+  .workshops-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+  }
+
+  .workshop-card {
+    background: #0b0d18;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 24px;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+
+    &:hover {
+      transform: translateY(-4px);
+      border-color: rgba(255, 255, 255, 0.3);
+    }
+
+    .card-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: white;
+      margin-bottom: 10px;
+    }
+
+    .card-text {
+      font-size: 15px;
+      line-height: 1.6;
+      color: rgba(255, 255, 255, 0.75);
+    }
+  }
+}

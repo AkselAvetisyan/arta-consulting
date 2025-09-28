@@ -1,54 +1,50 @@
 import React from 'react';
 import { getRouterPrefix } from "../../router/getRouterPrefix";
-import {usePathname} from "next/navigation";
 import {useTranslations} from "next-intl";
 import {BASE_ROUTERS} from "@/main/constants/BASE_ROUTERS";
 import Link from "next/link";
-import {BASE_IMAGES} from "@/main/constants/BASE_IMAGES";
+import {SECTIONS} from "@/main/constants/BASE_SECTIONS";
 import '../styles/header-desktop.scss';
 
 function HeaderDesktop({ isVisible }) {
 
     const t = useTranslations();
-    const pathname = usePathname();
-    const path = pathname === getRouterPrefix() + BASE_ROUTERS.main ? "Home Screen" : pathname
+
+    function scrollToSection(id) {
+        const section = document.getElementById(id);
+        section.scrollIntoView({behavior: "smooth"});
+    }
 
     return (
-        <>
-            <header className={`header-desktop ${isVisible ? 'header-visible' : 'header-hidden'}`}>
-
-                <div className={"container"}>
-
-                    <Link href={getRouterPrefix() + BASE_ROUTERS.main}>
-                        <img className={"logo"} src={BASE_IMAGES.icons.logo} alt="Hyoor logo"/>
-                    </Link>
-
-                    <div className={"services"}>
-                        <Link href={getRouterPrefix() + BASE_ROUTERS.aboutUs}
-                              className={"service"}>
-                            {t("menu-aboutUs")}
-                        </Link>
-
-                        <Link href={getRouterPrefix() + BASE_ROUTERS.services}
-                              className={"service"}>
-                            {t("menu-services")}
-                        </Link>
-
-                        <Link href={getRouterPrefix() + BASE_ROUTERS.invitations}
-                              className={"service"}>
-                            {t("menu-invitations")}
-                        </Link>
-
-                        <Link href={getRouterPrefix() + BASE_ROUTERS.contactUs}
-                              className={"service contact-us"}>
-                            {t("menu-contactUs")}
-                        </Link>
+        <header className={`header-desktop ${isVisible ? "header-visible" : "header-hidden"}`}>
+            <div className="header-container">
+                <Link href={getRouterPrefix() + BASE_ROUTERS.main} className="logo-container">
+                    <div className="logo-icon">
+                        <span className="logo-text">ARTA</span>
                     </div>
+                    <span className="logo-text">CONSULTING</span>
+                </Link>
 
-                </div>
+                <nav className="content">
+                    <button className="menu-item" onClick={() => { scrollToSection(SECTIONS.services) }}>
+                        {t("menu-services")}
+                    </button>
+                    <button className="menu-item" onClick={() => { scrollToSection(SECTIONS.aboutUs) }}>
+                        {t("menu-aboutUs")}
+                    </button>
+                    <button className="menu-item" onClick={() => { scrollToSection(SECTIONS.workshops) }}>
+                        {t("menu-workshops")}
+                    </button>
+                    <button className="menu-item" onClick={() => { scrollToSection(SECTIONS.insights) }}>
+                        {t("menu-insights")}
+                    </button>
+                </nav>
 
-            </header>
-        </>
+                <button className="button" onClick={() => { scrollToSection(SECTIONS.contacts) }}>
+                    {t("menu-contactUs")}
+                </button>
+            </div>
+        </header>
     );
 }
 

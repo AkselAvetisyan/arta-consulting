@@ -1,24 +1,29 @@
-import {BASE_ROUTERS} from "@/main/constants/BASE_ROUTERS";
+import {SECTIONS} from "@/main/constants/BASE_SECTIONS";
 
 export const SidebarData = [
     {
-        key: "about-us",
-        title: "menu-aboutUs",
-        urlName: BASE_ROUTERS.aboutUs
-    },
-    {
         key: "services",
         title: "menu-services",
-        urlName: BASE_ROUTERS.services
+        sectionName: SECTIONS.services
     },
     {
-        key: "invitations",
-        title: "menu-invitations",
-        urlName: BASE_ROUTERS.invitations
+        key: "aboutUs",
+        title: "menu-aboutUs",
+        sectionName: SECTIONS.aboutUs
+    },
+    {
+        key: "workshops",
+        title: "menu-workshops",
+        sectionName: SECTIONS.workshops
+    },
+    {
+        key: "insights",
+        title: "menu-insights",
+        sectionName: SECTIONS.insights
     },
     {
         key: "contact-us",
         title: "menu-contactUs",
-        urlName: BASE_ROUTERS.contactUs
+        sectionName: SECTIONS.contacts
     }
 ];

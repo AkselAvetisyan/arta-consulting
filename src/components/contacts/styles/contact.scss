@@ -1,0 +1,200 @@
+@use "src/styles/_variables" as *;
+
+#contact-us {
+  position: relative;
+  background-color: var(--color-surface);
+  padding: 80px 0;
+
+  .gradient-bar {
+    position: absolute;
+    inset-inline: 0;
+    top: -40px;
+    margin-inline: auto;
+    width: 224px;
+    height: 4px;
+    border-radius: 9999px;
+    background: var(--color-gradient);
+  }
+
+  .content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+    margin: 0 16px;
+
+    .form {
+      background-color: #0B0D18;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 16px;
+      padding: 24px;
+
+      .field-group {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+        margin-bottom: 20px;
+
+        .field {
+          label {
+            font-size: var(--font-size-caption);
+            color: #cbd5e1;
+          }
+
+          input {
+            width: 100%;
+            font-size: var(--font-size-caption);
+            color: var(--color-white);
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 8px 12px;
+            margin-top: 4px;
+
+            &::placeholder {
+              color: #94a3b8;
+            }
+
+            &:focus {
+              outline: none;
+              border-color: var(--white);
+              box-shadow: 0 0 0 2px var(--white);
+            }
+          }
+        }
+      }
+
+      .message {
+        font-size: var(--font-size-body);
+
+        label {
+          font-size: var(--font-size-caption);
+          color: #cbd5e1;
+        }
+
+        textarea {
+          margin-top: 4px;
+          width: 100%;
+          border-radius: 8px;
+          border: 1px solid rgba(255, 255, 255, 0.1);
+          background-color: rgba(255, 255, 255, 0.05);
+          padding: 8px 12px;
+          color: #fff;
+          font-size: 14px;
+          resize: vertical;
+
+          &::placeholder {
+            color: #94a3b8;
+          }
+
+          &:focus {
+            outline: none;
+            border-color: var(--white);
+            box-shadow: 0 0 0 2px var(--white);
+          }
+        }
+      }
+
+      .submit {
+        width: 100%;
+        font-size: var(--font-size-caption);
+        color: var(--white);
+        background: var(--color-gradient);
+        border-radius: 8px;
+        font-weight: 600;
+        cursor: pointer;
+        border: none;
+        margin-top: 20px;
+        padding: 12px 20px;
+
+        &:hover {
+          opacity: 0.9;
+        }
+      }
+
+      .disclaimer {
+        text-align: center;
+        font-size: var(--font-size-label);
+        color: #94a3b8;
+        margin-top: 12px;
+      }
+    }
+
+    .info {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+
+      .card {
+        background-color: #0B0D18;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 16px;
+        padding: 24px;
+
+        h4 {
+          font-size: var(--font-size-subtitle);
+          font-weight: 600;
+          color: var(--color-white);
+          margin-bottom: 12px;
+        }
+
+        .contact-list {
+          display: flex;
+          flex-direction: column;
+          gap: 12px;
+          color: #cbd5e1;
+
+          p {
+            font-size: var(--font-size-caption);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+          }
+        }
+
+        .calendly-btn {
+          font-size: var(--font-size-caption);
+          font-weight: 600;
+          color: var(--white);
+          display: inline-flex;
+          align-items: center;
+          padding: 8px 16px;
+          border-radius: 8px;
+          background: var(--color-gradient);
+          text-decoration: none;
+          margin-top: 20px;
+
+          &:hover {
+            opacity: 0.9;
+          }
+        }
+
+        ul {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+          display: flex;
+          flex-direction: column;
+          gap: 8px;
+
+          li {
+            font-size: var(--font-size-caption);
+            color: #cbd5e1;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media(max-width: #{$tabletM}px) {
+  #contact-us {
+
+    .content {
+      grid-template-columns: 1fr;
+
+      .form .field-group {
+        grid-template-columns: 1fr;
+      }
+    }
+  }
+}

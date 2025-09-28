@@ -1,0 +1,58 @@
+@use "src/styles/_variables" as *;
+
+#footer {
+  background-color: var(--color-surface);
+  padding: 48px 20px;
+
+  .content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    align-items: center;
+    justify-content: space-between;
+
+    .left {
+      font-size: var(--font-size-caption);
+      color: #94a3b8;
+    }
+
+    .center {
+      font-size: var(--font-size-caption);
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      color: #cbd5e1;
+
+      a {
+        color: inherit;
+        text-decoration: none;
+        transition: color 0.3s ease;
+
+        &:hover {
+          color: gray;
+        }
+      }
+    }
+
+    .right {
+      display: flex;
+      justify-content: flex-end;
+
+      .gradient-bar {
+        width: 160px;
+        height: 8px;
+        border-radius: 2oxpx;
+        background: var(--color-gradient)
+      }
+    }
+  }
+}
+
+@media (max-width: #{$tabletM}px) {
+  #footer {
+
+    .content {
+      grid-template-columns: 1fr;
+    }
+  }
+}
