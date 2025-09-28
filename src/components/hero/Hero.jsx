@@ -1,7 +1,13 @@
 import Feature from "@/components/hero/components/Feature";
 import './styles/hero.scss';
+import {SECTIONS} from "@/main/constants/BASE_SECTIONS";
 
 function Hero({ id }) {
+
+    function scrollToSection(id) {
+        const section = document.getElementById(id);
+        section.scrollIntoView({behavior: "smooth"});
+    }
 
     return (
         <section id={id}>
@@ -14,12 +20,12 @@ function Hero({ id }) {
                         ARTA Consulting delivers data-driven consulting, workshops & training, business planning and feasibility studies, and comprehensive evaluation & financial recovery programs.
                     </p>
                     <div className="hero-buttons">
-                        <a href="#contact" className="primary">
+                        <button className="primary">
                             Book a 20‑min Consultation
-                        </a>
-                        <a href="#services" className="secondary">
+                        </button>
+                        <button className="secondary" onClick={() => { scrollToSection(SECTIONS.services) }}>
                             Explore Services
-                        </a>
+                        </button>
                     </div>
                 </div>
                 <div className="hero-features">
