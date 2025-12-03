@@ -10,10 +10,7 @@ const HeaderContent = ({isVisible, isSidebarVisible, showSidebar, hideSidebar}) 
     return (
         <div className={`content ${isVisible ? 'header-visible' : 'header-hidden'}`}>
             <Link href={getRouterPrefix() + BASE_ROUTERS.main} className="logo-container">
-                <div className="logo-icon">
-                    <span className="logo-text">ARTA</span>
-                </div>
-                <span className="logo-text">CONSULTING</span>
+                <img src={BASE_IMAGES.icons.logo} className={"icon"}/>
             </Link>
 
             <div className="burger-icon-container" onClick={isSidebarVisible ? hideSidebar : showSidebar}>

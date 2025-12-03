@@ -5,6 +5,7 @@ import {BASE_ROUTERS} from "@/main/constants/BASE_ROUTERS";
 import Link from "next/link";
 import {SECTIONS} from "@/main/constants/BASE_SECTIONS";
 import '../styles/header-desktop.scss';
+import {BASE_IMAGES} from "@/main/constants/BASE_IMAGES";
 
 function HeaderDesktop({ isVisible }) {
 
@@ -19,10 +20,7 @@ function HeaderDesktop({ isVisible }) {
         <header className={`header-desktop ${isVisible ? "header-visible" : "header-hidden"}`}>
             <div className="header-container">
                 <Link href={getRouterPrefix() + BASE_ROUTERS.main} className="logo-container">
-                    <div className="logo-icon">
-                        <span className="logo-text">ARTA</span>
-                    </div>
-                    <span className="logo-text">CONSULTING</span>
+                    <img src={BASE_IMAGES.icons.logo} className={"icon"}/>
                 </Link>
 
                 <nav className="content">
